@@ -63,6 +63,7 @@ public class stepDefinition {
 
 	@Then("I close the browser")
 	public void tearDown() {
+		System.out.println("Browser is closing");
 		driver.close();
 	}
 }
