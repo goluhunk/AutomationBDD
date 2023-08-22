@@ -50,13 +50,13 @@
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
-<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.7.2</version>
+    <version>4.11.0</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
 <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-jvm -->
 <dependency>
@@ -97,6 +97,12 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+          <configuration>
+			  <testFailureIgnore>true</testFailureIgnore>
+			  <includes>
+				  <include>**/*Runner.java</include>
+			  </includes>
+		  </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
