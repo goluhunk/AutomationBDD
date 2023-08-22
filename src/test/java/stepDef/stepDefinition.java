@@ -13,6 +13,7 @@ import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObject.AuthLoginPage;
 import pageObject.ProfileAndSettingPage;
+import utilities.Browser;
 
 
 
@@ -21,13 +22,17 @@ import pageObject.ProfileAndSettingPage;
 public class stepDefinition {
 
 	public WebDriver driver;
+	public Browser browser;
 	public AuthLoginPage alp;
 	public ProfileAndSettingPage pasp;
 	
 	@Before
 	public void setup() {
-		WebDriverManager.firefoxdriver().setup();
-		driver=new FirefoxDriver();
+		browser=new Browser();
+		driver=browser.getDriver();
+		/*
+		 * WebDriverManager.firefoxdriver().setup(); driver=new FirefoxDriver();
+		 */
 	}
 
 	@Given("I launch Browser")
@@ -63,7 +68,6 @@ public class stepDefinition {
 
 	@Then("I close the browser")
 	public void tearDown() {
-		System.out.println("Browser is closing");
 		driver.close();
 	}
 }
