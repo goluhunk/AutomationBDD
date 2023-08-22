@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-               Run.bat
+               bat "Run"
             }
  
             post {                
