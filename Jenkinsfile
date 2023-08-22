@@ -6,6 +6,13 @@ pipeline {
             steps {
                bat "Run"
             }
+            
+        stage ('Cucumber Reports') {
+            steps {
+                cucumber buildStatus: "UNSTABLE",
+                    fileIncludePattern: "**/cucumber.json",
+                    jsonReportDirectory: 'target'
+            }
  
             post {                
                 // If Maven was able to run the tests, even if some of the test
