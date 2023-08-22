@@ -13,7 +13,8 @@ import io.cucumber.junit.CucumberOptions;
 					glue ="stepDef", 
 					dryRun=false,
 					monochrome = true,
-					plugin = { "pretty","html:target/cucumber-reports.html" },
+				    //plugin = { "pretty","html:target/cucumber-reports.html" },
+					plugin = ("json:target/cucumber-reports/CucumberTestReport.json"),
 					tags="@Login"
 )
 public class Runner{}
